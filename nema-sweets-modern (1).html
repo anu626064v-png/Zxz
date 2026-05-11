@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nema Sweets - Authentic Taste & Tradition</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --primary: #000000;
+    --secondary: #1a1a1a;
+    --accent: #ffffff;
+    --dark: #0d0d0d;
+    --light: #f5f5f5;
+    --white: #ffffff;
+    --gray: #666666;
+    --whatsapp: #25d366;
+    --whatsapp-dark: #1ebe57;
+    --shadow: 0 10px 30px rgba(0,0,0,0.15);
+    --transition: all 0.3s ease;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Poppins',sans-serif; color:var(--dark); line-height:1.6; background:#ffffff; overflow-x:hidden; }
+.container { max-width:1200px; margin:0 auto; padding:0 20px; }
+h1,h2,h3 { font-family:'Playfair Display',serif; font-weight:700; }
+a { text-decoration:none; color:inherit; }
+ul { list-style:none; }
+
+/* BUTTONS */
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 28px; border-radius:50px; font-weight:600; cursor:pointer; transition:var(--transition); text-align:center; border:none; font-size:0.95rem; font-family:inherit; }
+.btn-primary { background:var(--primary); color:#fff; border:2px solid var(--primary); }
+.btn-primary:hover { background:#333; border-color:#333; transform:translateY(-2px); box-shadow:0 5px 15px rgba(0,0,0,0.3); }
+.btn-secondary { background:transparent; border:2px solid var(--primary); color:var(--primary); }
+.btn-secondary:hover { background:var(--primary); color:#fff; }
+.btn-whatsapp { background:var(--whatsapp); color:#fff; font-size:1rem; padding:14px 28px; border-radius:12px; }
+.btn-whatsapp:hover { background:var(--whatsapp-dark); transform:translateY(-2px); box-shadow:0 5px 20px rgba(37,211,102,0.4); }
+.full-width { width:100%; }
+
+/* NAVBAR */
+.navbar { background:#fff; height:75px; display:flex; align-items:center; position:sticky; top:0; z-index:1000; box-shadow:0 2px 15px rgba(0,0,0,0.1); border-bottom:2px solid #000; }
+.navbar .container { display:flex; justify-content:space-between; align-items:center; width:100%; }
+.logo-text { font-size:1.6rem; font-weight:700; color:var(--primary); letter-spacing:1px; }
+.logo-text span { color:#000; font-weight:400; }
+.nav-links { display:flex; gap:25px; align-items:center; }
+.nav-links a { font-weight:600; color:var(--dark); position:relative; transition:var(--transition); text-transform:uppercase; font-size:0.85rem; }
+.nav-links a::after { content:''; position:absolute; width:0; height:3px; bottom:-4px; left:0; background:var(--primary); transition:var(--transition); }
+.nav-links a:hover::after { width:100%; }
+.nav-links a:hover { color:var(--primary); }
+.login-link { background:var(--primary); color:#fff !important; padding:8px 18px; border-radius:20px; display:flex; align-items:center; gap:6px; font-weight:600; }
+.login-link::after { display:none !important; }
+.login-link:hover { background:#333 !important; }
+.owner-link { background:#000; color:#fff !important; padding:8px 18px; border-radius:20px; display:flex; align-items:center; gap:6px; font-weight:600; }
+.owner-link::after { display:none !important; }
+.owner-link:hover { background:#333 !important; }
+.cart-btn { background:#000; color:#fff !important; padding:8px 18px; border-radius:20px; display:flex; align-items:center; gap:6px; font-weight:600; position:relative; }
+.cart-btn::after { display:none !important; }
+.cart-btn:hover { background:#333 !important; }
+.cart-count { position:absolute; top:-8px; right:-8px; background:var(--whatsapp); color:#fff; border-radius:50%; width:24px; height:24px; display:flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:700; }
+.wa-manage-btn { background:var(--whatsapp); color:#fff !important; padding:8px 14px; border-radius:20px; display:flex; align-items:center; gap:6px; font-size:0.83rem; font-weight:600; }
+.wa-manage-btn::after { display:none !important; }
+.wa-manage-btn:hover { background:var(--whatsapp-dark) !important; }
+.menu-toggle { display:none; font-size:1.5rem; cursor:pointer; color:var(--primary); z-index:1001; }
+
+/* CHAT NOTE BAR */
+.chat-note-bar { background:#000; border-bottom:2px solid #fff; padding:10px 0; text-align:center; }
+.chat-note-bar .container { display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap; }
+.chat-note-bar span { font-size:0.88rem; color:#fff; line-height:1.5; }
+.chat-note-bar strong { color:var(--whatsapp); }
+.chat-note-icon { color:var(--whatsapp); font-size:1.2rem; flex-shrink:0; }
+
+/* HERO */
+.hero { padding:80px 0; background:linear-gradient(135deg,#ffffff 0%,#f5f5f5 100%); overflow:hidden; border-bottom:3px solid #000; }
+.hero .container { display:flex; align-items:center; gap:50px; }
+.hero-content { flex:1; }
+.hero-content h1 { font-size:3.2rem; line-height:1.2; margin-bottom:20px; color:#000; }
+.hero-content h1 span { color:#000; font-weight:700; text-decoration:underline; }
+.hero-content p { font-size:1.05rem; color:var(--gray); margin-bottom:30px; }
+.hero-btns { display:flex; gap:15px; flex-wrap:wrap; }
+.hero-image { flex:1; text-align:center; }
+.hero-image img { width:100%; max-width:480px; border-radius:30px; box-shadow:var(--shadow); animation:float 6s ease-in-out infinite; border:3px solid #000; }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-18px)} }
+
+/* SEARCH */
+.search-section { padding:35px 0; background:#fff; position:relative; z-index:10; border-bottom:2px solid #000; }
+.search-wrapper { background:#fff; padding:25px; border-radius:20px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:18px; border:2px solid #000; }
+.search-bar { position:relative; }
+.search-bar i { position:absolute; left:18px; top:50%; transform:translateY(-50%); color:var(--gray); }
+.search-bar input { width:100%; padding:14px 14px 14px 48px; border:2px solid #000; border-radius:50px; outline:none; font-size:1rem; font-family:inherit; transition:var(--transition); }
+.search-bar input:focus { border-color:#000; box-shadow:0 0 0 3px rgba(0,0,0,0.1); }
+.category-filters { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+.filter-btn { padding:8px 20px; border-radius:30px; background:#fff; border:2px solid #000; cursor:pointer; font-weight:600; font-family:inherit; transition:var(--transition); font-size:0.9rem; color:#000; }
+.filter-btn.active,.filter-btn:hover { background:#000; color:#fff; border-color:#000; }
+
+/* SWEET CARDS */
+.menu-section { padding:80px 0; }
+.section-header { text-align:center; margin-bottom:50px; }
+.section-header h2 { font-size:2.4rem; margin-bottom:10px; color:#000; }
+.section-header p { color:var(--gray); font-size:1rem; }
+.sweet-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:28px; }
+.sweet-card { background:#fff; border-radius:20px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1); transition:var(--transition); border:2px solid #000; }
+.sweet-card:hover { transform:translateY(-8px); box-shadow:var(--shadow); }
+.sweet-img { height:200px; overflow:hidden; position:relative; }
+.sweet-img img { width:100%; height:100%; object-fit:cover; transition:var(--transition); }
+.sweet-card:hover .sweet-img img { transform:scale(1.05); }
+.sweet-category { position:absolute; top:12px; right:12px; background:#000; padding:4px 12px; border-radius:20px; font-size:0.72rem; color:#fff; font-weight:600; }
+.sweet-info { padding:18px; }
+.sweet-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px; gap:10px; }
+.sweet-header h4 { font-size:1.05rem; font-family:'Poppins',sans-serif; font-weight:600; color:#000; }
+.sweet-price { color:#000; font-weight:700; font-size:1rem; white-space:nowrap; }
+.sweet-rating { color:#000; font-size:0.88rem; margin-bottom:10px; }
+.sweet-desc { font-size:0.83rem; color:var(--gray); margin-bottom:18px; min-height:38px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.card-actions { display:flex; gap:10px; }
+.order-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:7px; background:var(--whatsapp); color:#fff; padding:11px 10px; border-radius:12px; font-weight:600; font-size:0.88rem; transition:var(--transition); border:none; cursor:pointer; font-family:inherit; }
+.order-btn:hover { background:var(--whatsapp-dark); transform:scale(1.03); }
+.order-btn i { font-size:1.05rem; }
+.cart-add-btn { width:42px; height:42px; display:flex; align-items:center; justify-content:center; background:#000; color:#fff; border-radius:12px; cursor:pointer; transition:var(--transition); flex-shrink:0; border:none; font-weight:600; }
+.cart-add-btn:hover { background:#333; }
+.delete-btn { width:42px; height:42px; display:flex; align-items:center; justify-content:center; background:#fee2e2; color:#ef4444; border-radius:12px; cursor:pointer; transition:var(--transition); flex-shrink:0; border:none; }
+.delete-btn:hover { background:#ef4444; color:#fff; }
+
+/* ADD SWEET */
+.add-sweet-section { padding:80px 0; background:#f5f5f5; border-top:3px solid #000; border-bottom:3px solid #000; }
+.add-sweet-wrapper { display:flex; background:#fff; border-radius:25px; overflow:hidden; box-shadow:var(--shadow); max-width:980px; margin:0 auto; border:2px solid #000; }
+.form-image { flex:1; min-height:300px; }
+.form-image img { width:100%; height:100%; object-fit:cover; }
+.form-container { flex:1.2; padding:38px; }
+.form-container h3 { font-size:1.7rem; margin-bottom:8px; color:#000; }
+.form-container > p { color:var(--gray); margin-bottom:25px; font-size:0.9rem; }
+.form-group { margin-bottom:14px; }
+.form-group label { display:block; margin-bottom:7px; font-weight:600; font-size:0.88rem; color:var(--dark); }
+.form-row { display:flex; gap:14px; }
+input,select,textarea { width:100%; padding:11px 14px; border:2px solid #000; border-radius:10px; outline:none; font-family:inherit; font-size:0.93rem; background:#fff; transition:var(--transition); color:var(--dark); }
+input:focus,select:focus,textarea:focus { border-color:#000; background:#fff; box-shadow:0 0 0 3px rgba(0,0,0,0.1); }
+.file-input-wrapper { display:flex; align-items:center; gap:12px; }
+.file-btn { padding:9px 18px; font-size:0.83rem; border-radius:10px; }
+#fileNameDisplay { font-size:0.82rem; color:var(--gray); }
+
+/* OWNER NUMBERS LIST */
+.number-item { display:flex; align-items:center; justify-content:space-between; background:#f5f5f5; border:2px solid #000; border-radius:10px; padding:12px 16px; margin-bottom:10px; gap:10px; }
+.number-item-info { display:flex; align-items:center; gap:10px; flex:1; }
+.number-item-info i { color:var(--whatsapp); font-size:1.2rem; }
+.number-item-name { font-weight:700; font-size:0.88rem; color:var(--dark); }
+.number-item-phone { font-size:0.8rem; color:var(--gray); }
+.number-edit-btn { background:#000; color:#fff; border:none; border-radius:8px; width:34px; height:34px; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:var(--transition); flex-shrink:0; font-weight:600; }
+.number-edit-btn:hover { background:#333; }
+.number-delete-btn { background:#fee2e2; color:#ef4444; border:none; border-radius:8px; width:34px; height:34px; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:var(--transition); flex-shrink:0; }
+.number-delete-btn:hover { background:#ef4444; color:#fff; }
+
+/* CART MODAL */
+.cart-modal-content { max-width:500px; }
+.cart-item { display:flex; justify-content:space-between; align-items:center; background:#f5f5f5; padding:12px; border-radius:10px; margin-bottom:10px; border:1px solid #ddd; }
+.cart-item-info { flex:1; }
+.cart-item-name { font-weight:600; color:#000; }
+.cart-item-qty { font-size:0.85rem; color:var(--gray); }
+.cart-item-price { font-weight:700; color:#000; }
+.cart-remove-btn { background:#fee2e2; color:#ef4444; border:none; border-radius:6px; width:28px; height:28px; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:0.8rem; }
+.cart-remove-btn:hover { background:#ef4444; color:#fff; }
+.cart-empty { text-align:center; padding:30px; color:var(--gray); }
+.cart-total { background:#000; color:#fff; padding:15px; border-radius:10px; text-align:center; font-weight:700; margin-top:15px; }
+
+/* REVIEWS */
+.reviews-section { padding:80px 0; background:#fff; border-top:3px solid #000; }
+.reviews-grid { display:grid; grid-template-columns:1fr 1.5fr; gap:35px; }
+.review-form-container { background:#f5f5f5; padding:28px; border-radius:20px; border:2px solid #000; height:fit-content; }
+.review-form-container h3 { margin-bottom:20px; color:#000; font-size:1.3rem; display:flex; align-items:center; gap:8px; }
+.star-rating { display:flex; flex-direction:row-reverse; justify-content:flex-end; gap:4px; font-size:2rem; }
+.star-rating input { display:none; }
+.star-rating label { color:#ddd; cursor:pointer; transition:var(--transition); }
+.star-rating label:hover,.star-rating label:hover ~ label,.star-rating input:checked ~ label { color:#000; }
+.reviews-list-container { max-height:580px; overflow-y:auto; padding-right:8px; }
+.reviews-list-container::-webkit-scrollbar { width:4px; }
+.reviews-list-container::-webkit-scrollbar-thumb { background:#ddd; border-radius:10px; }
+.review-card { background:#fff; padding:18px; border-radius:14px; margin-bottom:16px; border:2px solid #000; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
+.review-card-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px; gap:8px; }
+.reviewer-name { font-weight:700; font-size:0.95rem; color:#000; }
+.review-sweet-tag { font-size:0.72rem; background:#f5f5f5; color:#000; padding:3px 10px; border-radius:10px; font-weight:600; display:inline-block; margin-left:7px; border:1px solid #000; }
+.review-stars { color:#000; margin-bottom:7px; font-size:0.9rem; }
+.review-text { font-size:0.88rem; color:var(--gray); font-style:italic; }
+.review-delete-btn { width:30px; height:30px; display:flex; align-items:center; justify-content:center; background:#fee2e2; color:#ef4444; border-radius:8px; cursor:pointer; transition:var(--transition); border:none; font-size:0.82rem; flex-shrink:0; }
+.review-delete-btn:hover { background:#ef4444; color:#fff; }
+
+/* CONTACT */
+.contact-section { padding:80px 0; background:#f5f5f5; border-top:3px solid #000; }
+.contact-grid { display:grid; grid-template-columns:1fr 1.5fr; gap:50px; align-items:start; }
+.contact-info h3 { font-size:1.9rem; margin-bottom:28px; color:#000; }
+.info-item { display:flex; gap:16px; margin-bottom:22px; align-items:flex-start; }
+.info-item i { font-size:1.2rem; color:#000; margin-top:4px; min-width:20px; }
+.info-item strong { display:block; font-size:0.82rem; color:var(--gray); margin-bottom:2px; }
+.info-item p { font-size:0.95rem; color:#000; }
+.social-links { display:flex; gap:12px; margin-top:25px; }
+.social-links a { width:44px; height:44px; border-radius:50%; background:#000; display:flex; align-items:center; justify-content:center; font-size:1.1rem; transition:var(--transition); color:#fff; }
+.social-links a:hover { background:#333; transform:translateY(-3px); }
+.map-container { border-radius:20px; overflow:hidden; box-shadow:var(--shadow); height:350px; border:2px solid #000; }
+
+/* FOOTER */
+footer { padding:50px 0; background:#000; color:#fff; text-align:center; border-top:3px solid #fff; }
+.footer-content { display:flex; flex-direction:column; align-items:center; gap:10px; }
+footer p { opacity:0.75; font-size:0.88rem; }
+
+/* MODAL */
+.modal { display:none; position:fixed; z-index:2000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.6); align-items:center; justify-content:center; }
+.modal.show { display:flex; }
+.modal-content { background:#fff; padding:35px; border-radius:22px; box-shadow:0 15px 50px rgba(0,0,0,0.3); max-width:480px; width:92%; max-height:92vh; overflow-y:auto; animation:slideUp 0.3s ease; position:relative; border:2px solid #000; }
+.small-modal { max-width:380px; }
+@keyframes slideUp { from{transform:translateY(60px);opacity:0} to{transform:translateY(0);opacity:1} }
+.close-btn { position:absolute; top:15px; right:20px; font-size:26px; cursor:pointer; color:var(--gray); line-height:1; background:none; border:none; transition:var(--transition); }
+.close-btn:hover { color:var(--dark); transform:scale(1.2); }
+.modal-header { text-align:center; margin-bottom:25px; }
+.modal-icon { font-size:2.8rem; color:#000; margin-bottom:10px; display:block; }
+.modal-header h2 { font-size:1.6rem; color:var(--dark); margin-bottom:5px; }
+.modal-header p { color:var(--gray); font-size:0.9rem; }
+.order-summary-box { background:#f5f5f5; border:2px solid #000; border-radius:12px; padding:14px 18px; display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
+.order-summary-box span { font-weight:600; font-size:1rem; color:#000; }
+.price-tag { color:#000; font-size:1.1rem; }
+.qty-controls { display:flex; align-items:center; gap:0; border:2px solid #000; border-radius:12px; overflow:hidden; }
+.qty-btn { width:44px; height:44px; background:#f5f5f5; border:none; font-size:1.3rem; cursor:pointer; font-weight:600; transition:var(--transition); color:var(--dark); flex-shrink:0; }
+.qty-btn:hover { background:#000; color:#fff; }
+.qty-controls input { border:none; border-left:2px solid #000; border-right:2px solid #000; border-radius:0; text-align:center; font-size:1rem; font-weight:700; width:80px; background:#fff; padding:10px 5px; }
+.qty-controls input:focus { box-shadow:none; }
+.form-group small { display:block; margin-top:6px; color:var(--gray); font-size:0.78rem; }
+.total-display { display:flex; justify-content:space-between; align-items:center; background:#f5f5f5; border:2px solid #000; border-radius:12px; padding:14px 18px; margin:18px 0; }
+.total-display span { font-weight:600; color:var(--dark); }
+.total-price { font-size:1.3rem; color:#000; font-weight:700; }
+.modal-note { text-align:center; font-size:0.78rem; color:var(--gray); margin-top:12px; }
+
+/* RESPONSIVE */
+@media (max-width:992px) {
+    .hero .container { flex-direction:column; text-align:center; }
+    .hero-content h1 { font-size:2.6rem; }
+    .hero-image { order:-1; }
+    .hero-btns { justify-content:center; }
+    .add-sweet-wrapper { flex-direction:column; }
+    .form-image { height:230px; }
+    .contact-grid { grid-template-columns:1fr; }
+    .reviews-grid { grid-template-columns:1fr; }
+}
+@media (max-width:768px) {
+    .menu-toggle { display:block; }
+    .nav-links { position:fixed; top:0; right:-100%; width:78%; height:100vh; background:#fff; flex-direction:column; align-items:center; justify-content:center; transition:0.4s; box-shadow:-10px 0 30px rgba(0,0,0,0.12); z-index:1000; gap:0; }
+    .nav-links li { margin:18px 0; }
+    .nav-links a { font-size:1.1rem; }
+    .nav-links.active { right:0; }
+    .hero-content h1 { font-size:2.1rem; }
+    .section-header h2 { font-size:2rem; }
+    .form-row { flex-direction:column; gap:0; }
+    .chat-note-bar span { font-size:0.78rem; }
+}
+@media (max-width:480px) {
+    .sweet-grid { grid-template-columns:1fr; }
+    .modal-content { padding:25px 20px; }
+    .hero-content h1 { font-size:1.8rem; }
+    .hero-btns .btn { width:100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- OWNER LOGIN MODAL -->
+<div id="ownerLoginModal" class="modal">
+    <div class="modal-content small-modal">
+        <span class="close-btn" onclick="closeModal('ownerLoginModal')">&times;</span>
+        <div class="modal-header">
+            <i class="fas fa-crown modal-icon"></i>
+            <h2>Owner Login</h2>
+            <p>Apna password daalo</p>
+        </div>
+        <form id="ownerLoginForm">
+            <div class="form-group">
+                <label><i class="fas fa-lock"></i> Password</label>
+                <input type="password" id="ownerPassword" required placeholder="Owner password">
+            </div>
+            <p id="ownerError" style="display:none;color:#ef4444;font-size:0.85rem;margin-bottom:10px;text-align:center">
+                ❌ Galat password! Dobara try karein.
+            </p>
+            <button type="submit" class="btn btn-primary full-width">
+                <i class="fas fa-sign-in-alt"></i> Login Karein
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- OWNER WHATSAPP NUMBERS MODAL -->
+<div id="ownerNumbersModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('ownerNumbersModal')">&times;</span>
+        <div class="modal-header">
+            <i class="fab fa-whatsapp modal-icon" style="color:#25d366"></i>
+            <h2>WhatsApp Numbers</h2>
+            <p>Orders yahan aayenge — manage karein</p>
+        </div>
+        <div id="savedNumbersList" style="margin-bottom:20px;"></div>
+        <div style="background:#f5f5f5;border-radius:12px;padding:18px;border:2px solid #000;">
+            <label style="font-weight:600;font-size:0.88rem;display:block;margin-bottom:10px;">
+                <i class="fab fa-whatsapp" style="color:#25d366"></i> Naya Number Add Karein
+            </label>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                <input type="text" id="newNumberName" placeholder="Naam (Ex: Owner)" style="flex:1;min-width:120px;">
+                <input type="tel" id="newNumberPhone" placeholder="Number (Ex: 9301570370)" style="flex:1;min-width:140px;">
+            </div>
+            <button onclick="addOwnerNumber()" class="btn btn-primary full-width" style="margin-top:12px;border-radius:10px;">
+                <i class="fas fa-plus"></i> Number Add Karein
+            </button>
+        </div>
+        <p style="font-size:0.75rem;color:#999;margin-top:10px;text-align:center;">* Orders sabhi active numbers pe jayenge</p>
+    </div>
+</div>
+
+<!-- EDIT PHONE NUMBER MODAL -->
+<div id="editPhoneModal" class="modal">
+    <div class="modal-content small-modal">
+        <span class="close-btn" onclick="closeModal('editPhoneModal')">&times;</span>
+        <div class="modal-header">
+            <i class="fas fa-phone modal-icon"></i>
+            <h2>Phone Number Edit</h2>
+            <p>Naya phone number daalo</p>
+        </div>
+        <form id="editPhoneForm">
+            <div class="form-group">
+                <label><i class="fas fa-phone"></i> Phone Number</label>
+                <input type="tel" id="editPhoneInput" required placeholder="Naya phone number">
+            </div>
+            <button type="submit" class="btn btn-primary full-width">
+                <i class="fas fa-save"></i> Save Karein
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- CUSTOMER LOGIN MODAL -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('loginModal')">&times;</span>
+        <div class="modal-header">
+            <i class="fas fa-user-circle modal-icon"></i>
+            <h2>Login / Register</h2>
+            <p>Order karne ke liye apni details bharein</p>
+        </div>
+        <form id="loginForm">
+            <div class="form-group">
+                <label><i class="fas fa-user"></i> Poora Naam *</label>
+                <input type="text" id="userName" required placeholder="Apna naam likhein">
+            </div>
+            <div class="form-group">
+                <label><i class="fas fa-phone"></i> Phone Number *</label>
+                <input type="tel" id="userPhone" required placeholder="Apna phone number">
+            </div>
+            <div class="form-group">
+                <label><i class="fas fa-map-marker-alt"></i> Poora Pata *</label>
+                <textarea id="userAddress" required placeholder="Ghar ka poora pata likhein..." rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label><i class="fas fa-envelope"></i> Email (Optional)</label>
+                <input type="email" id="userEmail" placeholder="Email address">
+            </div>
+            <button type="submit" class="btn btn-primary full-width">
+                <i class="fas fa-check-circle"></i> Login Karein
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- CART MODAL -->
+<div id="cartModal" class="modal">
+    <div class="modal-content cart-modal-content">
+        <span class="close-btn" onclick="closeModal('cartModal')">&times;</span>
+        <div class="modal-header">
+            <i class="fas fa-shopping-cart modal-icon"></i>
+            <h2>Your Cart</h2>
+            <p>Aapka order</p>
+        </div>
+        <div id="cartItemsList"></div>
+        <div id="cartTotalSection" style="display:none;">
+            <div class="cart-total">Total: <span id="cartGrandTotal">Rs. 0</span></div>
+            <button onclick="checkoutCart()" class="btn btn-whatsapp full-width" style="margin-top:15px;">
+                <i class="fab fa-whatsapp"></i> Checkout
+            </button>
+        </div>
+        <div id="cartEmptyMsg" class="cart-empty">
+            <i class="fas fa-shopping-cart" style="font-size:2rem;margin-bottom:10px;display:block;opacity:0.3"></i>
+            <p>Aapka cart khali hai!</p>
+        </div>
+    </div>
+</div>
+
+<!-- ORDER MODAL -->
+<div id="orderModal" class="modal">
+    <div class="modal-content small-modal">
+        <span class="close-btn" onclick="closeModal('orderModal')">&times;</span>
+        <div class="modal-header">
+            <i class="fas fa-shopping-bag modal-icon"></i>
+            <h2>Order Karein</h2>
+            <p id="orderModalTitle">Mithai ka naam</p>
+        </div>
+        <div class="order-summary-box">
+            <span id="orderSweetName">-</span>
+            <span id="orderSweetPrice" class="price-tag">-</span>
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-weight"></i> Quantity (kg mein)</label>
+            <div class="qty-controls">
+                <button type="button" class="qty-btn" onclick="changeQty(-0.25)">-</button>
+                <input type="number" id="quantityInput" min="0.25" step="0.25" value="1">
+                <button type="button" class="qty-btn" onclick="changeQty(0.25)">+</button>
+            </div>
+            <small>Minimum: 250 gram (0.25 kg)</small>
+        </div>
+        <div id="totalDisplay" class="total-display">
+            <span>Total Amount:</span>
+            <span id="totalAmount" class="total-price">Rs. 0</span>
+        </div>
+        <button id="sendOrderBtn" class="btn btn-whatsapp full-width">
+            <i class="fab fa-whatsapp"></i> WhatsApp pe Order Bhejein
+        </button>
+        <p class="modal-note">* Order details seedha WhatsApp mein chali jayengi</p>
+    </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="container">
+        <div class="logo-text">Nema <span>Sweets</span></div>
+        <div style="display:flex;align-items:center;gap:15px;">
+            <div id="menuToggle" class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li id="addSweetNavLink" style="display:none;"><a href="#add-sweet">Add Sweet</a></li>
+                <li><a href="#" id="loginBtn" class="login-link" onclick="openLoginModal(); return false;"><i class="fas fa-user"></i> <span id="loginBtnText">Login</span></a></li>
+                <li><a href="#" id="cartBtn" class="cart-btn" onclick="openCartModal(); return false;"><i class="fas fa-shopping-cart"></i> <span class="cart-count" id="cartCount" style="display:none;">0</span></a></li>
+                <li><a href="#" id="ownerBtn" class="owner-link" onclick="openOwnerLogin(); return false;"><i class="fas fa-crown"></i> <span>Owner</span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- CHAT NOTE BAR -->
+<div class="chat-note-bar">
+    <div class="container">
+        <i class="fas fa-bell chat-note-icon"></i>
+        <span><strong>📱 WhatsApp pe Order Karein:</strong> Seedha aapka order accept ho jayega!</span>
+    </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Nema <span>Sweets</span></h1>
+            <p>Authentic taste aur tradition ke saath, har mithai special banai jati hai. Surkhi se seedha aapke ghar tak!</p>
+            <div class="hero-btns">
+                <a href="#menu" class="btn btn-primary"><i class="fas fa-shopping-bag"></i> Menu Dekhen</a>
+                <a href="#contact" class="btn btn-secondary"><i class="fas fa-map-marker-alt"></i> Hamse Milin</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=800&q=80" alt="Nema Sweets">
+        </div>
+    </div>
+</section>
+
+<!-- SEARCH -->
+<section class="search-section">
+    <div class="container">
+        <div class="search-wrapper">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" id="sweetSearch" placeholder="Mithai dhundhen... (Gulab Jamun, Kaju Katli, etc.)">
+            </div>
+            <div class="category-filters">
+                <button class="filter-btn active" data-filter="all">Sab</button>
+                <button class="filter-btn" data-filter="Traditional Sweets">Traditional</button>
+                <button class="filter-btn" data-filter="Cakes">Cakes</button>
+                <button class="filter-btn" data-filter="Pastries">Pastries</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="menu-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Hamari Special Midhaiyan</h2>
+            <p>Har mithai pyar se banai gayi, aapke swad ke liye</p>
+        </div>
+        <div class="sweet-grid" id="sweetGrid"></div>
+    </div>
+</section>
+
+<!-- ADD SWEET (OWNER ONLY) -->
+<section id="add-sweet" class="add-sweet-section" style="display:none;">
+    <div class="container">
+        <div class="add-sweet-wrapper">
+            <div class="form-image">
+                <img id="previewImage" src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=800&q=80" alt="Preview">
+            </div>
+            <div class="form-container">
+                <h3><i class="fas fa-plus-circle"></i> Nai Mithai Add Karein</h3>
+                <p>Shop mein nai mithai add karne ke liye ye form bharen</p>
+                <form id="addSweetForm">
+                    <div class="form-group">
+                        <label><i class="fas fa-tag"></i> Mithai ka Naam *</label>
+                        <input type="text" id="sweetName" required placeholder="Ex: Gulab Jamun">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-rupee-sign"></i> Price (per kg) *</label>
+                            <input type="number" id="sweetPrice" required placeholder="Ex: 450">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-star"></i> Rating</label>
+                            <input type="number" id="sweetRating" min="1" max="5" step="0.1" placeholder="Ex: 4.8">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-list"></i> Category *</label>
+                        <select id="sweetCategory" required>
+                            <option value="">Category chunein...</option>
+                            <option value="Traditional Sweets">Traditional Sweets</option>
+                            <option value="Cakes">Cakes</option>
+                            <option value="Pastries">Pastries</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-align-left"></i> Description *</label>
+                        <textarea id="sweetDescription" required placeholder="Mithai ke baare mein likhen..." rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-image"></i> Photo</label>
+                        <div class="file-input-wrapper">
+                            <input type="file" id="sweetImageFile" accept="image/*" style="display:none;">
+                            <button type="button" class="btn btn-secondary file-btn" onclick="document.getElementById('sweetImageFile').click();">
+                                <i class="fas fa-upload"></i> Photo Upload Karein
+                            </button>
+                            <span id="fileNameDisplay">Koi file nahi chuni</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width" style="margin-top:20px;">
+                        <i class="fas fa-check"></i> Mithai Add Karein
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="reviews-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Customer Reviews</h2>
+            <p>Hamari customers kya kehte hain</p>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-form-container">
+                <form id="reviewForm">
+                    <h3><i class="fas fa-star"></i> Review Likhein</h3>
+                    <div class="form-group">
+                        <label>Aapka Naam</label>
+                        <input type="text" id="reviewerName" required placeholder="Naam likhein">
+                    </div>
+                    <div class="form-group">
+                        <label>Khaayi gayi Mithai</label>
+                        <select id="reviewSweetSelect" required><option value="">Mithai chunein...</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label>Rating</label>
+                        <div class="star-rating">
+                            <input type="radio" name="rating" value="5" id="s5"><label for="s5">&#9733;</label>
+                            <input type="radio" name="rating" value="4" id="s4"><label for="s4">&#9733;</label>
+                            <input type="radio" name="rating" value="3" id="s3"><label for="s3">&#9733;</label>
+                            <input type="radio" name="rating" value="2" id="s2"><label for="s2">&#9733;</label>
+                            <input type="radio" name="rating" value="1" id="s1"><label for="s1">&#9733;</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Aapka Feedback</label>
+                        <textarea id="reviewText" rows="3" required placeholder="Kya pasand aaya?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width">
+                        <i class="fas fa-paper-plane"></i> Review Submit Karein
+                    </button>
+                </form>
+            </div>
+            <div class="reviews-list-container"><div id="reviewsList"></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Hamari Dukaan Par Aaiye</h3>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div><strong>Pata</strong><p>Bus Stand, Narsinghpur Road Main, Surkhi, Madhya Pradesh</p></div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div><strong>Phone</strong><p><a href="tel:+919301570370">+91 93015 70370</a></p></div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div><strong>Timing</strong><p>Roz Khula: Subah 8:00 - Raat 9:00</p></div>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14640.482661458!2d78.74500!3d23.60500!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3978c95b4a9a9a9b%3A0x7e1b2c3d4e5f6a7b!2sSurkhi%2C%20Madhya%20Pradesh%20470229!5e0!3m2!1shi!2sin!4v1700000000000!5m2!1shi!2sin"
+                    width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <span class="logo-text" style="font-size:1.4rem">Nema <span style="color:#fff">Sweets</span></span>
+            <p>&copy; 2026 Nema Sweets. All rights reserved.</p>
+            <p>Made with <span style="color:#ef4444">&#10084;</span> for Sweet Lovers</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+// ================================================
+// NEMA SWEETS - MODERN VERSION
+// Owner Password: nema@786
+// ================================================
+
+var OWNER_PASSWORD = "nema@786";
+
+var defaultNumbers = [
+    { id: 1, name: "Nema Sweets", phone: "919301570370" }
+];
+
+var initialSweets = [
+    { id: 1, name: "Gulab Jamun", price: 450, rating: 4.8, category: "Traditional Sweets", description: "Soft, melt-in-the-mouth khoya balls soaked in sugar syrup.", image: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=800&q=80" },
+    { id: 2, name: "Kaju Katli", price: 900, rating: 4.9, category: "Traditional Sweets", description: "Premium cashew fudge, classic Indian delicacy for all occasions.", image: "https://images.unsplash.com/photo-1602253057119-44d745d9b860?auto=format&fit=crop&w=800&q=80" },
+    { id: 3, name: "Chocolate Cake", price: 600, rating: 4.6, category: "Cakes", description: "Rich chocolate cake with dark chocolate ganache layering.", image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80" },
+    { id: 4, name: "Motichoor Laddu", price: 400, rating: 4.7, category: "Traditional Sweets", description: "Fine boondi pearls fried in ghee, bound into delicious laddus.", image: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=800&q=80" }
+];
+
+var initialReviews = [
+    { id: 1, name: "Rahul Sharma", sweet: "Gulab Jamun", rating: 5, feedback: "Best Gulab Jamun! So soft and perfectly sweet." },
+    { id: 2, name: "Priya Singh", sweet: "Kaju Katli", rating: 4, feedback: "Very fresh and high quality. Highly recommend!" }
+];
+
+var sweets       = JSON.parse(localStorage.getItem('nema_sweets'))   || initialSweets;
+var reviews      = JSON.parse(localStorage.getItem('nema_reviews'))  || initialReviews;
+var currentUser  = JSON.parse(localStorage.getItem('nema_user'))     || null;
+var ownerNumbers = JSON.parse(localStorage.getItem('nema_numbers'))  || defaultNumbers;
+var isOwner      = localStorage.getItem('nema_owner') === 'true';
+var cart         = JSON.parse(localStorage.getItem('nema_cart'))     || [];
+var selectedImageBase64 = "";
+var pendingSweet = null;
+var currentFilter = 'all';
+var searchTerm = '';
+var defaultImg = "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=800&q=80";
+var editingNumberId = null;
+
+// MODAL
+function openModal(id) { var m=document.getElementById(id); if(m) m.classList.add('show'); }
+function closeModal(id) { var m=document.getElementById(id); if(m) m.classList.remove('show'); }
+window.addEventListener('click', function(e) { if(e.target.classList.contains('modal')) e.target.classList.remove('show'); });
+
+// OWNER LOGIN
+function openOwnerLogin() {
+    if (isOwner) {
+        if (confirm('Aap owner mode mein hain.\n\nLogout karna chahte hain?')) {
+            isOwner = false;
+            localStorage.removeItem('nema_owner');
+            updateOwnerUI(); filterAndSearch(); renderReviews();
+            alert('Owner mode se logout ho gaye!');
+        }
+        return;
+    }
+    document.getElementById('ownerError').style.display = 'none';
+    document.getElementById('ownerPassword').value = '';
+    openModal('ownerLoginModal');
+}
+
+var ownerLoginForm = document.getElementById('ownerLoginForm');
+if (ownerLoginForm) {
+    ownerLoginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (document.getElementById('ownerPassword').value === OWNER_PASSWORD) {
+            isOwner = true;
+            localStorage.setItem('nema_owner', 'true');
+            closeModal('ownerLoginModal');
+            ownerLoginForm.reset();
+            updateOwnerUI(); filterAndSearch(); renderReviews();
+            alert('✅ Owner Mode ON!\n\n• Sweet/Review delete kar sakte hain\n• Mithai add kar sakte hain\n• WhatsApp numbers manage kar sakte hain\n• Phone number change kar sakte hain');
+        } else {
+            document.getElementById('ownerError').style.display = 'block';
+            document.getElementById('ownerPassword').value = '';
+        }
+    });
+}
+
+function updateOwnerUI() {
+    var ownerBtn = document.getElementById('ownerBtn');
+    var addSection = document.getElementById('add-sweet');
+    var addNav = document.getElementById('addSweetNavLink');
+    if (ownerBtn) {
+        if (isOwner) {
+            ownerBtn.innerHTML = '<i class="fas fa-crown"></i> <span>Owner ✓</span>';
+            ownerBtn.style.background = '#000';
+            ownerBtn.style.color = '#fff';
+            if (!document.getElementById('waNumBtn')) {
+                var li = document.createElement('li');
+                li.id = 'waNumBtnLi';
+                var a = document.createElement('a');
+                a.id = 'waNumBtn';
+                a.href = '#';
+                a.className = 'wa-manage-btn';
+                a.innerHTML = '<i class="fab fa-whatsapp"></i> Numbers';
+                a.onclick = function() { openOwnerNumbersModal(); return false; };
+                li.appendChild(a);
+                ownerBtn.parentElement.parentElement.insertBefore(li, ownerBtn.parentElement);
+            }
+        } else {
+            ownerBtn.innerHTML = '<i class="fas fa-crown"></i> <span>Owner</span>';
+            ownerBtn.style.background = '';
+            ownerBtn.style.color = '';
+            var waBtn = document.getElementById('waNumBtnLi');
+            if (waBtn) waBtn.remove();
+        }
+    }
+    if (addSection) addSection.style.display = isOwner ? 'block' : 'none';
+    if (addNav) addNav.style.display = isOwner ? 'list-item' : 'none';
+}
+
+// WHATSAPP NUMBERS
+function openOwnerNumbersModal() { renderNumbersList(); openModal('ownerNumbersModal'); }
+
+function renderNumbersList() {
+    var list = document.getElementById('savedNumbersList');
+    if (!list) return;
+    list.innerHTML = '';
+    if (!ownerNumbers || ownerNumbers.length === 0) {
+        list.innerHTML = '<p style="text-align:center;color:#aaa;padding:20px;">Koi number nahi hai. Neeche add karein.</p>';
+        return;
+    }
+    ownerNumbers.forEach(function(num) {
+        var item = document.createElement('div');
+        item.className = 'number-item';
+        item.innerHTML = '<div class="number-item-info"><i class="fab fa-whatsapp"></i><div><div class="number-item-name">' + num.name + '</div><div class="number-item-phone">+' + num.phone + '</div></div></div><button type="button" class="number-edit-btn" onclick="editOwnerNumber(' + num.id + ')"><i class="fas fa-edit"></i></button><button type="button" class="number-delete-btn" onclick="deleteOwnerNumber(' + num.id + ')"><i class="fas fa-trash-alt"></i></button>';
+        list.appendChild(item);
+    });
+}
+
+function editOwnerNumber(id) {
+    var num = ownerNumbers.find(function(n) { return n.id === id; });
+    if (!num) return;
+    editingNumberId = id;
+    document.getElementById('editPhoneInput').value = num.phone.replace(/^91/, '');
+    openModal('editPhoneModal');
+}
+
+var editPhoneForm = document.getElementById('editPhoneForm');
+if (editPhoneForm) {
+    editPhoneForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var phone = document.getElementById('editPhoneInput').value.trim().replace(/\D/g, '');
+        if (!phone || phone.length < 10) { alert('Sahi phone number daalo! (10 digits)'); return; }
+        if (phone.length === 10) phone = '91' + phone;
+        var num = ownerNumbers.find(function(n) { return n.id === editingNumberId; });
+        if (num) num.phone = phone;
+        localStorage.setItem('nema_numbers', JSON.stringify(ownerNumbers));
+        closeModal('editPhoneModal');
+        editPhoneForm.reset();
+        renderNumbersList();
+        alert('✅ Phone number update ho gaya!');
+    });
+}
+
+function addOwnerNumber() {
+    var name = document.getElementById('newNumberName').value.trim();
+    var phone = document.getElementById('newNumberPhone').value.trim().replace(/\D/g, '');
+    if (!name || !phone) { alert('Kripya naam aur number dono bharein!'); return; }
+    if (phone.length < 10) { alert('Sahi phone number daalo! (10 digits)'); return; }
+    if (phone.length === 10) phone = '91' + phone;
+    ownerNumbers.push({ id: Date.now(), name: name, phone: phone });
+    localStorage.setItem('nema_numbers', JSON.stringify(ownerNumbers));
+    document.getElementById('newNumberName').value = '';
+    document.getElementById('newNumberPhone').value = '';
+    renderNumbersList();
+    alert('✅ "' + name + '" ka number add ho gaya!');
+}
+
+function deleteOwnerNumber(id) {
+    if (!confirm('Kya aap ye number hatana chahte hain?')) return;
+    ownerNumbers = ownerNumbers.filter(function(n) { return n.id !== id; });
+    localStorage.setItem('nema_numbers', JSON.stringify(ownerNumbers));
+    renderNumbersList();
+}
+
+// CUSTOMER LOGIN
+function openLoginModal() {
+    if (currentUser) {
+        if (confirm('Aap logged in hain.\n\nLogout karna chahte hain?')) {
+            currentUser = null;
+            localStorage.removeItem('nema_user');
+            updateLoginBtn();
+            alert('Logout ho gaye!');
+        }
+        return;
+    }
+    document.getElementById('loginForm').reset();
+    openModal('loginModal');
+}
+
+var loginForm = document.getElementById('loginForm');
+if (loginForm) {
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var name = document.getElementById('userName').value.trim();
+        var phone = document.getElementById('userPhone').value.trim();
+        var address = document.getElementById('userAddress').value.trim();
+        var email = document.getElementById('userEmail').value.trim();
+        if (!name || !phone || !address) { alert('Kripya sabhi zaruri fields bharein!'); return; }
+        currentUser = { name: name, phone: phone, address: address, email: email };
+        localStorage.setItem('nema_user', JSON.stringify(currentUser));
+        closeModal('loginModal');
+        loginForm.reset();
+        updateLoginBtn();
+        alert('🎉 Swagat hai, ' + name + '!\nAb aap order kar sakte hain.');
+        if (pendingSweet) { setTimeout(function() { openOrderModal(pendingSweet); }, 300); }
+    });
+}
+
+function updateLoginBtn() {
+    var btn = document.getElementById('loginBtnText');
+    var loginEl = document.getElementById('loginBtn');
+    if (currentUser && btn) {
+        btn.textContent = currentUser.name.split(' ')[0];
+        if (loginEl) { loginEl.querySelector('i').className = 'fas fa-user-check'; loginEl.style.background = '#000'; }
+    } else if (btn) {
+        btn.textContent = 'Login';
+        if (loginEl) { loginEl.querySelector('i').className = 'fas fa-user'; loginEl.style.background = '#000'; }
+    }
+}
+
+// MOBILE MENU
+var menuToggle = document.getElementById('menuToggle');
+var navLinks = document.getElementById('navLinks');
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        menuToggle.querySelector('i').className = navLinks.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
+    });
+    navLinks.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            navLinks.classList.remove('active');
+            var ic = menuToggle.querySelector('i');
+            if (ic) ic.className = 'fas fa-bars';
+        });
+    });
+}
+
+// IMAGE UPLOAD
+var sweetImageFile = document.getElementById('sweetImageFile');
+if (sweetImageFile) {
+    sweetImageFile.addEventListener('change', function(e) {
+        var file = e.target.files[0];
+        if (!file) return;
+        document.getElementById('fileNameDisplay').textContent = file.name;
+        var reader = new FileReader();
+        reader.onload = function(ev) {
+            selectedImageBase64 = ev.target.result;
+            var prev = document.getElementById('previewImage');
+            if (prev) prev.src = ev.target.result;
+        };
+        reader.readAsDataURL(file);
+    });
+}
+
+// RENDER SWEETS
+function renderSweets(data) {
+    var grid = document.getElementById('sweetGrid');
+    if (!grid) return;
+    grid.innerHTML = '';
+    if (!data || data.length === 0) {
+        grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--gray)"><i class="fas fa-search" style="font-size:3rem;margin-bottom:15px;display:block;opacity:0.3"></i><p>Koi mithai nahi mili.<br>Alag word se search karein!</p></div>';
+        return;
+    }
+    data.forEach(function(sweet) {
+        var card = document.createElement('div');
+        card.className = 'sweet-card';
+        var deleteBtn = isOwner ? '<button class="delete-btn" onclick="deleteSweet(' + sweet.id + ')"><i class="fas fa-trash-alt"></i></button>' : '';
+        var cartBtn = '<button class="cart-add-btn" onclick="addToCart(' + sweet.id + ')" title="Add to Cart"><i class="fas fa-plus"></i></button>';
+        card.innerHTML =
+            '<div class="sweet-img"><img src="' + sweet.image + '" alt="' + sweet.name + '" loading="lazy" onerror="this.src=\'' + defaultImg + '\'"><span class="sweet-category">' + sweet.category + '</span></div>' +
+            '<div class="sweet-info"><div class="sweet-header"><h4>' + sweet.name + '</h4><span class="sweet-price">&#8377;' + sweet.price + '/kg</span></div>' +
+            '<div class="sweet-rating">&#9733; ' + sweet.rating + '</div><p class="sweet-desc">' + sweet.description + '</p>' +
+            '<div class="card-actions"><button class="order-btn" onclick="startOrder(' + sweet.id + ')"><i class="fab fa-whatsapp"></i> Order</button>' + cartBtn + deleteBtn + '</div></div>';
+        grid.appendChild(card);
+    });
+    updateReviewDropdown();
+}
+
+// DELETE SWEET
+function deleteSweet(id) {
+    if (!isOwner) { alert('Sirf owner delete kar sakta hai!'); return; }
+    if (!confirm('Kya aap is mithai ko hatana chahte hain?')) return;
+    sweets = sweets.filter(function(s) { return s.id !== id; });
+    saveSweets(); filterAndSearch();
+}
+
+// SEARCH & FILTER
+var searchInput = document.getElementById('sweetSearch');
+if (searchInput) {
+    searchInput.addEventListener('input', function() { searchTerm = this.value.trim(); filterAndSearch(); });
+}
+document.querySelectorAll('.filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+        this.classList.add('active');
+        currentFilter = this.getAttribute('data-filter');
+        filterAndSearch();
+    });
+});
+function filterAndSearch() {
+    var term = searchTerm.toLowerCase();
+    var filtered = sweets.filter(function(s) {
+        var match = s.name.toLowerCase().indexOf(term) !== -1 || s.category.toLowerCase().indexOf(term) !== -1 || s.description.toLowerCase().indexOf(term) !== -1;
+        return match && (currentFilter === 'all' || s.category === currentFilter);
+    });
+    renderSweets(filtered);
+}
+
+// ADD SWEET
+var addSweetForm = document.getElementById('addSweetForm');
+if (addSweetForm) {
+    addSweetForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (!isOwner) { alert('Sirf owner mithai add kar sakta hai!'); return; }
+        var name = document.getElementById('sweetName').value.trim();
+        var price = document.getElementById('sweetPrice').value;
+        var rating = document.getElementById('sweetRating').value || '4.5';
+        var cat = document.getElementById('sweetCategory').value;
+        var desc = document.getElementById('sweetDescription').value.trim();
+        if (!name || !price || !desc) { alert('Kripya sabhi fields bharein!'); return; }
+        sweets.unshift({ id: Date.now(), name: name, price: parseInt(price), rating: parseFloat(rating), category: cat, description: desc, image: selectedImageBase64 || defaultImg });
+        saveSweets(); filterAndSearch(); addSweetForm.reset();
+        var prev = document.getElementById('previewImage');
+        if (prev) prev.src = defaultImg;
+        document.getElementById('fileNameDisplay').textContent = 'Koi file nahi chuni';
+        selectedImageBase64 = '';
+        alert('✅ "' + name + '" shop mein add ho gayi!');
+        window.location.href = '#menu';
+    });
+}
+
+function saveSweets() {
+    localStorage.setItem('nema_sweets', JSON.stringify(sweets));
+}
+
+// CART SYSTEM
+function addToCart(sweetId) {
+    var sweet = sweets.find(function(s) { return s.id === sweetId; });
+    if (!sweet) return;
+    var existing = cart.find(function(c) { return c.id === sweetId; });
+    if (existing) {
+        existing.qty += 1;
+    } else {
+        cart.push({ id: sweet.id, name: sweet.name, price: sweet.price, qty: 1 });
+    }
+    saveCart();
+    updateCartCount();
+    alert('✅ ' + sweet.name + ' cart mein add ho gaya!');
+}
+
+function removeFromCart(sweetId) {
+    cart = cart.filter(function(c) { return c.id !== sweetId; });
+    saveCart();
+    renderCart();
+    updateCartCount();
+}
+
+function saveCart() {
+    localStorage.setItem('nema_cart', JSON.stringify(cart));
+}
+
+function updateCartCount() {
+    var count = cart.length;
+    var countEl = document.getElementById('cartCount');
+    if (countEl) {
+        if (count > 0) {
+            countEl.textContent = count;
+            countEl.style.display = 'flex';
+        } else {
+            countEl.style.display = 'none';
+        }
+    }
+}
+
+function openCartModal() {
+    if (!currentUser) {
+        alert('⚠️ Pehle Login karein!');
+        openLoginModal();
+        return;
+    }
+    renderCart();
+    openModal('cartModal');
+}
+
+function renderCart() {
+    var list = document.getElementById('cartItemsList');
+    var totalSection = document.getElementById('cartTotalSection');
+    var emptyMsg = document.getElementById('cartEmptyMsg');
+    if (!list) return;
+    
+    if (cart.length === 0) {
+        list.innerHTML = '';
+        totalSection.style.display = 'none';
+        emptyMsg.style.display = 'block';
+        return;
+    }
+    
+    emptyMsg.style.display = 'none';
+    list.innerHTML = '';
+    var total = 0;
+    cart.forEach(function(item) {
+        var itemTotal = item.price * item.qty;
+        total += itemTotal;
+        var cartItem = document.createElement('div');
+        cartItem.className = 'cart-item';
+        cartItem.innerHTML = '<div class="cart-item-info"><div class="cart-item-name">' + item.name + '</div><div class="cart-item-qty">Qty: ' + item.qty + ' kg</div></div><div style="display:flex;align-items:center;gap:10px;"><span class="cart-item-price">Rs. ' + itemTotal + '</span><button type="button" class="cart-remove-btn" onclick="removeFromCart(' + item.id + ')"><i class="fas fa-trash-alt"></i></button></div>';
+        list.appendChild(cartItem);
+    });
+    document.getElementById('cartGrandTotal').textContent = 'Rs. ' + total;
+    totalSection.style.display = 'block';
+}
+
+function checkoutCart() {
+    if (!currentUser || cart.length === 0) return;
+    var total = 0;
+    var items = '';
+    cart.forEach(function(item) {
+        var itemTotal = item.price * item.qty;
+        total += itemTotal;
+        items += '🛒 ' + item.name + ' — ' + item.qty + ' kg (Rs. ' + itemTotal + ')\n';
+    });
+    var now = new Date();
+    var time = now.toLocaleDateString('en-IN') + ' ' + now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
+    var msg =
+        '🍬 *NAYA ORDER — Nema Sweets* 🍬\n' +
+        '━━━━━━━━━━━━━━━━━━━━━\n' +
+        '👤 *Naam*  : ' + currentUser.name + '\n' +
+        '📞 *Phone* : ' + currentUser.phone + '\n' +
+        '📍 *Pata*  : ' + currentUser.address + '\n' +
+        (currentUser.email ? '📧 *Email* : ' + currentUser.email + '\n' : '') +
+        '━━━━━━━━━━━━━━━━━━━━━\n' +
+        items +
+        '━━━━━━━━━━━━━━━━━━━━━\n' +
+        '💰 *Total* : Rs. ' + total + '\n' +
+        '⏰ *Time*  : ' + time + '\n' +
+        '━━━━━━━━━━━━━━━━━━━━━\n' +
+        '📌 Nema Sweets, Surkhi, MP';
+    closeModal('cartModal');
+    var numbers = ownerNumbers.length > 0 ? ownerNumbers : defaultNumbers;
+    numbers.forEach(function(num, idx) {
+        setTimeout(function() {
+            window.open('https://wa.me/' + num.phone + '?text=' + encodeURIComponent(msg), '_blank');
+        }, idx * 800);
+    });
+    alert(
+        '🍬 Nema Sweets mein Aapka Swagat Hai! 🍬\n\n' +
+        '✅ Order WhatsApp pe bhej diya gaya!\n\n' +
+        '💰 Total: Rs. ' + total + '\n\n' +
+        '━━━━━━━━━━━━━━━━━━━━━\n' +
+        '⏳ Aapka order thodi der mein accept hoga.\n\n' +
+        '📞 Jankari confirm karne ke liye\n' +
+        'ek call bhi aa sakti hai.\n\n' +
+        '❓ Koi sawal ho to call karein:\n' +
+        '📱 9301570370\n' +
+        '━━━━━━━━━━━━━━━━━━━━━\n' +
+        'Shukriya! 😊'
+    );
+    cart = [];
+    saveCart();
+    updateCartCount();
+}
+
+// ORDER SYSTEM
+function startOrder(sweetId) {
+    var sweet = sweets.find(function(s) { return s.id === sweetId; });
+    if (!sweet) return;
+    if (!currentUser) {
+        pendingSweet = sweet;
+        alert('⚠️ Pehle Login karein!\n\nOrder ke liye naam, phone aur address zaroori hai.');
+        openLoginModal();
+        return;
+    }
+    pendingSweet = null;
+    openOrderModal(sweet);
+}
+
+function openOrderModal(sweet) {
+    pendingSweet = sweet;
+    document.getElementById('orderModalTitle').textContent = sweet.name + ' ka order';
+    document.getElementById('orderSweetName').textContent = sweet.name;
+    document.getElementById('orderSweetPrice').textContent = 'Rs. ' + sweet.price + '/kg';
+    document.getElementById('quantityInput').value = '1';
+    document.getElementById('totalAmount').textContent = 'Rs. ' + sweet.price;
+    openModal('orderModal');
+}
+
+function changeQty(delta) {
+    var input = document.getElementById('quantityInput');
+    if (!input) return;
+    var val = Math.round(((parseFloat(input.value) || 1) + delta) * 4) / 4;
+    if (val < 0.25) val = 0.25;
+    if (val > 50) val = 50;
+    input.value = val;
+    updateTotal();
+}
+
+var qtyInput = document.getElementById('quantityInput');
+if (qtyInput) qtyInput.addEventListener('input', updateTotal);
+
+function updateTotal() {
+    if (!pendingSweet) return;
+    var qty = parseFloat(document.getElementById('quantityInput').value) || 0;
+    if (qty > 0) document.getElementById('totalAmount').textContent = 'Rs. ' + (pendingSweet.price * qty).toFixed(0);
+}
+
+var sendOrderBtn = document.getElementById('sendOrderBtn');
+if (sendOrderBtn) {
+    sendOrderBtn.addEventListener('click', function() {
+        if (!pendingSweet || !currentUser) return;
+        var qty = parseFloat(document.getElementById('quantityInput').value);
+        if (!qty || qty < 0.25) { alert('Kripya sahi quantity daalen! (Minimum 0.25 kg)'); return; }
+        var total = (pendingSweet.price * qty).toFixed(0);
+        var now = new Date();
+        var time = now.toLocaleDateString('en-IN') + ' ' + now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
+        var msg =
+            '🍬 *NAYA ORDER — Nema Sweets* 🍬\n' +
+            '━━━━━━━━━━━━━━━━━━━━━\n' +
+            '👤 *Naam*  : ' + currentUser.name + '\n' +
+            '📞 *Phone* : ' + currentUser.phone + '\n' +
+            '📍 *Pata*  : ' + currentUser.address + '\n' +
+            (currentUser.email ? '📧 *Email* : ' + currentUser.email + '\n' : '') +
+            '━━━━━━━━━━━━━━━━━━━━━\n' +
+            '🛒 *Mithai*: ' + pendingSweet.name + '\n' +
+            '⚖️  *Qty*   : ' + qty + ' kg\n' +
+            '💰 *Total* : Rs. ' + total + '\n' +
+            '⏰ *Time*  : ' + time + '\n' +
+            '━━━━━━━━━━━━━━━━━━━━━\n' +
+            '📌 Nema Sweets, Surkhi, MP';
+        closeModal('orderModal');
+        var numbers = ownerNumbers.length > 0 ? ownerNumbers : defaultNumbers;
+        numbers.forEach(function(num, idx) {
+            setTimeout(function() {
+                window.open('https://wa.me/' + num.phone + '?text=' + encodeURIComponent(msg), '_blank');
+            }, idx * 800);
+        });
+        alert(
+            '🍬 Nema Sweets mein Aapka Swagat Hai! 🍬\n\n' +
+            '✅ Order WhatsApp pe bhej diya gaya!\n\n' +
+            '🛒 ' + pendingSweet.name + '  —  ' + qty + ' kg\n' +
+            '💰 Total: Rs. ' + total + '\n\n' +
+            '━━━━━━━━━━━━━━━━━━━━━\n' +
+            '⏳ Aapka order thodi der mein accept hoga.\n\n' +
+            '📞 Jankari confirm karne ke liye\n' +
+            'ek call bhi aa sakti hai.\n\n' +
+            '❓ Koi sawal ho to call karein:\n' +
+            '📱 9301570370\n' +
+            '━━━━━━━━━━━━━━━━━━━━━\n' +
+            'Shukriya! 😊'
+        );
+        pendingSweet = null;
+    });
+}
+
+// REVIEWS
+function updateReviewDropdown() {
+    var sel = document.getElementById('reviewSweetSelect');
+    if (!sel) return;
+    sel.innerHTML = '<option value="">Mithai chunein...</option>';
+    sweets.forEach(function(s) {
+        var opt = document.createElement('option');
+        opt.value = s.name;
+        opt.textContent = s.name;
+        sel.appendChild(opt);
+    });
+}
+
+function renderReviews() {
+    var list = document.getElementById('reviewsList');
+    if (!list) return;
+    list.innerHTML = '';
+    if (!reviews || reviews.length === 0) {
+        list.innerHTML = '<p style="text-align:center;color:#aaa;padding:20px;">Abhi koi review nahi hai.</p>';
+        return;
+    }
+    reviews.forEach(function(rev) {
+        var card = document.createElement('div');
+        card.className = 'review-card';
+        var deleteBtn = isOwner ? '<button class="review-delete-btn" onclick="deleteReview(' + rev.id + ')"><i class="fas fa-trash-alt"></i></button>' : '';
+        card.innerHTML = '<div class="review-card-header"><div><div class="reviewer-name">' + rev.name + '<span class="review-sweet-tag">' + rev.sweet + '</span></div><div class="review-stars">★ ' + rev.rating + '/5</div></div>' + deleteBtn + '</div><p class="review-text">"' + rev.feedback + '"</p>';
+        list.appendChild(card);
+    });
+}
+
+var reviewForm = document.getElementById('reviewForm');
+if (reviewForm) {
+    reviewForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var name = document.getElementById('reviewerName').value.trim();
+        var sweet = document.getElementById('reviewSweetSelect').value;
+        var rating = document.querySelector('input[name="rating"]:checked');
+        var text = document.getElementById('reviewText').value.trim();
+        if (!name || !sweet || !rating || !text) { alert('Kripya sabhi fields bharein!'); return; }
+        reviews.unshift({ id: Date.now(), name: name, sweet: sweet, rating: parseInt(rating.value), feedback: text });
+        localStorage.setItem('nema_reviews', JSON.stringify(reviews));
+        renderReviews();
+        reviewForm.reset();
+        alert('✅ Aapka review add ho gaya! Shukriya!');
+    });
+}
+
+function deleteReview(id) {
+    if (!isOwner) { alert('Sirf owner review delete kar sakta hai!'); return; }
+    if (!confirm('Kya aap ye review hatana chahte hain?')) return;
+    reviews = reviews.filter(function(r) { return r.id !== id; });
+    localStorage.setItem('nema_reviews', JSON.stringify(reviews));
+    renderReviews();
+}
+
+// INIT
+updateLoginBtn();
+updateOwnerUI();
+filterAndSearch();
+renderReviews();
+updateCartCount();
+</script>
+
+</body>
+</html>
